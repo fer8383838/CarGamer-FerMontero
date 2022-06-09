@@ -5,23 +5,23 @@ function NavBar() {
 
     return (
         <>
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <div class="container-fluid">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">CarGamer</a>
+            <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div className="container-fluid">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <a className="nav-link active" href="#">CarGamer</a>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <CarWidget/>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Producto</a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Producto</a>
                         </li>
                     </ul>
                 </div>
