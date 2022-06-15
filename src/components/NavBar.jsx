@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CarWidget from "./CarWidget";
 
 
@@ -9,19 +10,19 @@ function NavBar() {
                 <div className="container-fluid">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" href="#">CarGamer</a>
+                            <Link to="/" className="nav-link">CarGamer</Link>
                         </li>
                         <li className="nav-item">
                             <CarWidget/>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
+                            <Link to="/" className="nav-link">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Nosotros</a>
+                            <Link to="/categoria/1" className="nav-link">Categoria1</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Producto</a>
+                            <Link to="/categoria/2" className="nav-link">Categoria2</Link>
                         </li>
                     </ul>
                 </div>

@@ -8,7 +8,7 @@ export default function Item({ id, title, price, index, img }) {
 
     return (
         <>
-            <div className="col-4" key={id}>
+            <div className="col-2 text-center aling-items-center" key={id}>
                 <h3>Item {index}</h3>
                 <p>id: {id}</p>
                 <p>title: {title}</p>
