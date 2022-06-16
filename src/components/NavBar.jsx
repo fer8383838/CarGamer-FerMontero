@@ -19,10 +19,10 @@ function NavBar() {
                             <Link to="/" className="nav-link">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/categoria/1" className="nav-link">Categoria1</Link>
+                            <Link to="/category/GPU" className="nav-link">Categoria1</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/categoria/2" className="nav-link">Categoria2</Link>
+                            <Link to="/category/CPU" className="nav-link">Categoria2</Link>
                         </li>
                     </ul>
                 </div>

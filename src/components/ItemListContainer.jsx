@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
 // Datos mockeados.
-
-
 
 export default function ItemListContainer() {
 
@@ -13,28 +12,33 @@ export default function ItemListContainer() {
       title: "hola",
       price: 10,
       img: "https://via.placeholder.com/64",
+      categoryId: "GPU",
     },
     {
       id: 2,
       tittle: "hola",
       price: 20,
       img: "https://via.placeholder.com/64",
+      categoryId: "GPU",
     },
     {
       id: 3,
       tittle: "hola",
       price: 30,
       img: "https://via.placeholder.com/64",
+      categoryId: "CPU",
     },
     {
       id: 4, 
       tittle: "hola",
       price: 40,
       img: "https://via.placeholder.com/64",
+      categoryId: "CPU",
     },
   ]
 
   const [items, setItems] = useState([]);
+  const { categoryId } = useParams();
 
   useEffect(() => {
     const getItems = () => {
@@ -47,7 +51,11 @@ export default function ItemListContainer() {
 
     getItems()
       .then((res) => {
-        setItems(res);
+        if (categoryId) {
+          setItems(res.filter((product) => product.categoryId === categoryId));
+        } else {
+          setItems(res);
+        }
       })
       .catch((err) => {
         console.log(err);

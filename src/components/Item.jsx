@@ -1,4 +1,4 @@
-import ItemCount from "./ItemCount";
+import {Link} from 'react-router-dom';
 
 export default function Item({ id, title, price, index, img }) {
 
@@ -13,8 +13,7 @@ export default function Item({ id, title, price, index, img }) {
                 <p>id: {id}</p>
                 <p>title: {title}</p>
                 <p>price: {price}</p>
-                <img src={img} alt="img" />
-                <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+                <Link to={"/item/"+id}><img src={img} alt="img" /></Link>
             </div>
         </>
     )
