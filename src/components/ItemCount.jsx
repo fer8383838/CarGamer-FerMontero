@@ -1,5 +1,7 @@
+import {useState} from 'react';
 
-export default function ItemCount({ stock, onAdd, cant, setCant }) {
+export default function ItemCount({ stock, onAdd }) {
+    const [cant, setCant] = useState(1)
 
     function handleSumClick() {
         if (cant < stock) {

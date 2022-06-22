@@ -2,9 +2,12 @@ import { useState } from "react";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ item }) {
-  const [cant, setCant] = useState(1)
+  
   function onAdd(x) {
     alert(`Agregaste ${x} productos al carrito`);
+    setTimeout(() => {
+      
+    }, 2000);
   }
   const [producto, setProducto] = useState(item)
   return (
@@ -24,7 +27,7 @@ export default function ItemDetail({ item }) {
           <h3>price: {item.price}</h3>
           <img src={item.img} /> */}
           <div>
-          <ItemCount stock={5} onAdd={onAdd} cant={cant} setCant={setCant} />
+          <ItemCount stock={5} onAdd={onAdd}     />
           </div>
         </div>
       </div>
