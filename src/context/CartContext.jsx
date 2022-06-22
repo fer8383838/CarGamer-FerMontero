@@ -1,21 +1,37 @@
-import { createContext, useState } from "react";
+import { useState, createContext, useContext } from "react";
 
-export const MiContext = createContext({})
+export const CartContext = createContext();
+export const useCart = () => useContext(CartContext);
 
+const INITIAL_STATE = {
+  addedItems: [{ name: "Bicicleta", quantity: 1 }],
+  totalPrice: 0
+};
 
-export default function CartContext({ children }) {
-    const [darkMode, setDarkMode] = useState(true)
-    return (
-        <>
-            
-            <MiContext.Provider value={{ darkMode, setDarkMode }}>
-            {/* <MiContext.Provider value={{darkMode: darkMode, setDarkMode: setDarkMode}}> */}
-                <h2>CartContext</h2>
-                {children}
-                {/* es necesario esa linea para que los hijos se muestren */}
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState(INITIAL_STATE);
 
-            </MiContext.Provider>
-            
-        </>
-    )
-}
+  const addItem = (item) => {
+    if (cart.addedItems.some((addedItem) => addedItem.name === item.name)) {
+      // ya existe el item, hacer algo
+      return;
+    }
+
+    const newAddedItems = cart.addedItems.map((product) => {
+      if (product.name === "Bicicleta") return { ...product, quantity: 2 };
+
+      return product;
+    });
+    setCart({ ...cart, addedItems: newAddedItems });
+  };
+
+  const clear = () => {
+    setCart(INITIAL_STATE);
+  };
+
+  return (
+    <CartContext.Provider value={{ cart, addItem, clear }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
